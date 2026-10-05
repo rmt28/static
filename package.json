@@ -1,0 +1,31 @@
+{
+  "name": "company-profile",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmt28/static.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmt28/static/issues"
+  },
+  "homepage": "https://github.com/rmt28/static#readme",
+  "dependencies": {
+    "alpinejs": "^3.17.4",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.26"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3",
+    "vite": "^6.0.0"
+  }
+}
