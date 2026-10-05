@@ -1,9 +1,25 @@
 @import "tailwindcss";
 @import "lenis/dist/lenis.css";
 
+@font-face {
+    font-family: 'Outfit';
+    src: url('./public/fonts/Outfit.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('./public/fonts/SpaceGrotesk.ttf') format('truetype');
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 @theme {
-    --font-sans: 'Outfit', sans-serif;
-    --font-heading: 'Space Grotesk', sans-serif;
+    --font-sans: "Outfit", sans-serif;
+    --font-heading: "Space Grotesk", sans-serif;
 
     --color-white: #FFFFFF;
     --color-slate-light: #F8FAFC;
@@ -13,27 +29,10 @@
     --color-blue-gray: #E2E8F0;
 }
 
-@font-face {
-    font-family: 'Outfit';
-    src: url('./fonts/Outfit.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Space Grotesk';
-    src: url('./fonts/SpaceGrotesk.ttf') format('truetype');
-    font-weight: 300 700;
-    font-style: normal;
-    font-display: swap;
-}
-
 @layer base {
     body {
-        font-family: 'Outfit', sans-serif;
-        background-color: var(--color-white);
-        color: var(--color-dark);
+        font-family: "Outfit", sans-serif;
+        color: #0E1117;
     }
 
     h1,
@@ -42,7 +41,7 @@
     h4,
     h5,
     h6 {
-        font-family: 'Space Grotesk', sans-serif;
-        color: var(--color-dark);
+        font-family: "Space Grotesk", sans-serif;
+        color: #0E1117;
     }
 }
