@@ -10,7 +10,7 @@ $sshTest  = shell_exec('ssh -T git@github.com 2>&1');
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1aa.0">
     <title>Git & Environment Tester</title>
     <style>
         body { font-family: system-ui, sans-serif; background: #0e1117; color: #f8fafc; padding: 20px; }
