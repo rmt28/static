@@ -46,7 +46,7 @@
             <div class="flex h-20 items-center justify-between">
 
                 <!-- Logo Image -->
-                <a href="index.html" class="flex items-center group">
+                <a href="index.php" class="flex items-center group">
                     <div class="h-14 w-auto flex items-center justify-center transition transform scale-90 origin-left">
                         <img :src="scrolled ? 'public/image/logo/logo.png' : 'public/image/logo/logo-white.png'"
                             alt="Rumi Metal Logo" class="h-full w-auto object-contain transition-all duration-300" />
@@ -55,11 +55,11 @@
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden lg:flex items-center gap-7">
-                    <a href="index.html"
+                    <a href="index.php"
                         class="relative text-xs font-semibold uppercase tracking-wider pb-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:origin-left after:scale-x-100 after:transition-transform after:duration-300 after:ease-out after:will-change-transform after:transform-gpu"
                         :class="scrolled ? 'text-dark/80 hover:text-dark after:bg-dark' : 'text-white/80 hover:text-white after:bg-white'">Home</a>
 
-                    <a href="page/about.html"
+                    <a href="page/about.php"
                         class="relative text-xs font-semibold uppercase tracking-wider pb-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:origin-left after:scale-x-0 after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100 after:will-change-transform after:transform-gpu"
                         :class="scrolled ? 'text-dark/80 hover:text-dark after:bg-dark' : 'text-white/80 hover:text-white after:bg-white'">About
                         Us</a>
@@ -89,13 +89,13 @@
 
                             <div class="flex flex-col gap-1">
                                 <!-- Dropdown Item 1 -->
-                                <a href="page/specifications.html"
+                                <a href="page/specifications.php"
                                     class="block w-full px-3 py-2 text-xs font-semibold uppercase tracking-wider text-dark/80 hover:text-dark hover:bg-neutral-100 rounded-lg transition-colors duration-200">
                                     Specifications
                                 </a>
 
                                 <!-- Dropdown Item 2 -->
-                                <a href="page/catalog.html"
+                                <a href="page/catalog.php"
                                     class="block w-full px-3 py-2 text-xs font-semibold uppercase tracking-wider text-dark/80 hover:text-dark hover:bg-neutral-100 rounded-lg transition-colors duration-200">
                                     Catalog
                                 </a>
@@ -103,15 +103,15 @@
                         </div>
                     </div>
 
-                    <a href="page/facilities.html"
+                    <a href="page/facilities.php"
                         class="relative text-xs font-semibold uppercase tracking-wider pb-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:origin-left after:scale-x-0 after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100 after:will-change-transform after:transform-gpu"
                         :class="scrolled ? 'text-dark/80 hover:text-dark after:bg-dark' : 'text-white/80 hover:text-white after:bg-white'">Facilities</a>
 
-                    <a href="page/process.html"
+                    <a href="page/process.php"
                         class="relative text-xs font-semibold uppercase tracking-wider pb-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:origin-left after:scale-x-0 after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100 after:will-change-transform after:transform-gpu"
                         :class="scrolled ? 'text-dark/80 hover:text-dark after:bg-dark' : 'text-white/80 hover:text-white after:bg-white'">Process</a>
 
-                    <a href="page/qa.html"
+                    <a href="page/qa.php"
                         class="relative text-xs font-semibold uppercase tracking-wider pb-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:origin-left after:scale-x-0 after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100 after:will-change-transform after:transform-gpu"
                         :class="scrolled ? 'text-dark/80 hover:text-dark after:bg-dark' : 'text-white/80 hover:text-white after:bg-white'">Quality</a>
                 </nav>
@@ -126,7 +126,7 @@
                     </button>
 
                     <!-- CTA Button -->
-                    <a href="page/contact.html"
+                    <a href="page/contact.php"
                         class="inline-flex items-center justify-center rounded-full border-2 px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition focus:outline-none"
                         :class="scrolled ? 'text-dark hover:bg-dark border-dark hover:text-white' : 'text-white hover:bg-white border-white hover:text-dark'">
                         Contact Us
@@ -160,11 +160,11 @@
             class="lg:hidden border-b px-4 pt-2 pb-6 space-y-3 transition-colors"
             :class="scrolled ? 'bg-white border-slate-200 text-dark' : 'bg-dark/95 text-white border-white/10'">
 
-            <a href="index.html" @click="mobileMenuOpen = false"
+            <a href="index.php" @click="mobileMenuOpen = false"
                 class="block px-3 py-2 text-sm font-semibold transition-colors"
                 :class="scrolled ? 'hover:text-dark' : 'hover:text-white'">Home</a>
 
-            <a href="page/about.html" @click="mobileMenuOpen = false"
+            <a href="page/about.php" @click="mobileMenuOpen = false"
                 class="block px-3 py-2 text-sm font-semibold opacity-80 transition-colors"
                 :class="scrolled ? 'hover:text-dark' : 'hover:text-white'">About Us</a>
 
@@ -190,13 +190,13 @@
                     x-transition:leave-end="opacity-0 -translate-y-1" class="pl-4 pr-2 space-y-1 border-l-2 my-1"
                     :class="scrolled ? 'border-dark/20' : 'border-white/20'" style="display: none;">
 
-                    <a href="page/specifications.html" @click="mobileMenuOpen = false"
+                    <a href="page/specifications.php" @click="mobileMenuOpen = false"
                         class="block px-3 py-2 text-xs font-semibold uppercase tracking-wider opacity-75 transition-colors"
                         :class="scrolled ? 'hover:text-dark' : 'hover:text-white'">
                         Specifications
                     </a>
 
-                    <a href="page/catalog.html" @click="mobileMenuOpen = false"
+                    <a href="page/catalog.php" @click="mobileMenuOpen = false"
                         class="block px-3 py-2 text-xs font-semibold uppercase tracking-wider opacity-75 transition-colors"
                         :class="scrolled ? 'hover:text-dark' : 'hover:text-white'">
                         Catalog
@@ -204,20 +204,20 @@
                 </div>
             </div>
 
-            <a href="page/facilities.html" @click="mobileMenuOpen = false"
+            <a href="page/facilities.php" @click="mobileMenuOpen = false"
                 class="block px-3 py-2 text-sm font-semibold opacity-80 transition-colors"
                 :class="scrolled ? 'hover:text-dark' : 'hover:text-white'">Facilities</a>
 
-            <a href="page/process.html" @click="mobileMenuOpen = false"
+            <a href="page/process.php" @click="mobileMenuOpen = false"
                 class="block px-3 py-2 text-sm font-semibold opacity-80 transition-colors"
                 :class="scrolled ? 'hover:text-dark' : 'hover:text-white'">Process</a>
 
-            <a href="page/qa.html" @click="mobileMenuOpen = false"
+            <a href="page/qa.php" @click="mobileMenuOpen = false"
                 class="block px-3 py-2 text-sm font-semibold opacity-80 transition-colors"
                 :class="scrolled ? 'hover:text-dark' : 'hover:text-white'">Quality</a>
 
             <div class="pt-2">
-                <a href="page/contact.html" @click="mobileMenuOpen = false"
+                <a href="page/contact.php" @click="mobileMenuOpen = false"
                     class="block text-center w-full rounded-xl border-2 px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition"
                     :class="scrolled ? 'text-dark hover:bg-dark border-dark hover:text-white' : 'text-white hover:bg-white border-white hover:text-dark'">
                     Contact Us
@@ -232,7 +232,7 @@
         <!-- Background Image & Overlay -->
         <div class="absolute inset-0 z-0">
             <img src="public/image/section/areapabrik1.webp" alt="Rumi Metal Manufacturing Facility"
-                class="w-full h-full object-cover">
+                class="w-full h-full object-cover hero-media" fetchpriority="high" decoding="async">
             <div class="absolute inset-0 bg-linear-to-t from-dark/90 via-dark/70 to-dark/50"></div>
         </div>
 
@@ -307,81 +307,84 @@
     </section>
 
     <!-- Products Section -->
-    <section class="py-24 sm:py-32 lg:py-40 text-dark relative overflow-hidden">
+    <section class="relative overflow-hidden py-24 text-dark sm:py-32 lg:py-40">
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-            <!-- MAIN HEADER (Centered) -->
-            <div class="text-center max-w-4xl mx-auto mb-16" data-gsap="fade-up" data-duration="2">
+            <!-- MAIN HEADER -->
+            <div class="mx-auto mb-16 max-w-4xl text-center" data-gsap="fade-up" data-duration="2">
 
-                <div class="relative flex items-center justify-center w-full my-8">
+                <div class="relative my-8 flex w-full items-center justify-center">
                     <div class="grow border-t border-slate-gray/30"></div>
-                    <span class="mx-4 shrink-0 text-sm font-bold tracking-widest text-slate-gray uppercase">
+
+                    <span class="mx-4 shrink-0 text-sm font-bold uppercase tracking-widest text-slate-gray">
                         OUR PRODUCTS
                     </span>
+
                     <div class="grow border-t border-slate-gray/30"></div>
                 </div>
 
-                <!-- Main Heading -->
                 <h2
-                    class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-dark leading-tight tracking-tight">
+                    class="font-heading text-3xl font-bold leading-tight tracking-tight text-dark sm:text-4xl lg:text-5xl">
                     Custom Aluminum Profiles & Extrusions
                 </h2>
 
                 <p
-                    class="mt-6 text-slate-gray text-base sm:text-lg leading-relaxed font-sans font-light max-w-3xl mx-auto">
+                    class="mx-auto mt-6 max-w-3xl font-sans text-base font-light leading-relaxed text-slate-gray sm:text-lg">
                     PT Rumi Metal Indonesia manufactures custom aluminum extrusions engineered to strict tolerances. We
                     design every profile for high dimensional accuracy, structural strength, and reliable field
                     performance.
                 </p>
+
             </div>
 
-            <div class="relative max-w-5xl mx-auto">
 
-                <!-- Grid 2x2 Gambar Rapat -->
-                <div data-gsap="fade-left" data-duration="2"
-                    class="grid grid-cols-2 gap-0 max-w-2xl overflow-hidden shadow-sm">
+            <div class="relative mx-auto max-w-5xl">
+
+                <!-- PRODUCT IMAGE GRID -->
+                <div class="grid max-w-2xl grid-cols-2 gap-0 overflow-hidden shadow-sm" data-gsap="fade-left"
+                    data-duration="2">
 
                     <!-- Image 1 -->
-                    <div class="w-full aspect-4/3 overflow-hidden group">
-                        <img src="public/image/section/rounded1.jpg" alt="img1"
-                            class="w-full h-full object-cover transition-transform duration-500" />
+                    <div class="group aspect-4/3 w-full overflow-hidden">
+                        <img src="public/image/section/rounded1.jpg" alt="Aluminum profile manufacturing" loading="lazy"
+                            decoding="async" class="block h-full w-full object-cover transition-transform duration-500">
                     </div>
 
                     <!-- Image 2 -->
-                    <div class="w-full aspect-4/3 overflow-hidden group">
-                        <img src="public/image/section/rounded2.jpg" alt="img2"
-                            class="w-full h-full object-cover transition-transform duration-500" />
+                    <div class="group aspect-4/3 w-full overflow-hidden">
+                        <img src="public/image/section/rounded2.jpg" alt="Aluminum extrusion profile" loading="lazy"
+                            decoding="async" class="block h-full w-full object-cover transition-transform duration-500">
                     </div>
 
                     <!-- Image 3 -->
-                    <div class="w-full aspect-4/3 overflow-hidden group">
-                        <img src="public/image/section/rounded2.jpg" alt="img3"
-                            class="w-full h-full object-cover transition-transform duration-500" />
+                    <div class="group aspect-4/3 w-full overflow-hidden">
+                        <img src="public/image/section/rounded2.jpg" alt="Aluminum extrusion profile" loading="lazy"
+                            decoding="async" class="block h-full w-full object-cover transition-transform duration-500">
                     </div>
 
                     <!-- Image 4 -->
-                    <div class="w-full aspect-4/3 overflow-hidden group">
-                        <img src="public/image/section/rounded1.jpg" alt="img4"
-                            class="w-full h-full object-cover transition-transform duration-500" />
+                    <div class="group aspect-4/3 w-full overflow-hidden">
+                        <img src="public/image/section/rounded1.jpg" alt="Aluminum profile manufacturing" loading="lazy"
+                            decoding="async" class="block h-full w-full object-cover transition-transform duration-500">
                     </div>
 
                 </div>
 
-                <!-- Floating Text Box -->
-                <div data-gsap="fade-right" data-duration="2"
-                    class="static md:absolute md:top-1/2 md:-translate-y-1/2 md:left-[50%] z-10 bg-white p-6 sm:p-8 lg:p-10 max-w-md mt-4 md:mt-0">
 
-                    <!-- Text Description -->
-                    <p class="text-slate-gray text-base sm:text-lg leading-relaxed mb-6 font-sans font-light">
+                <!-- FLOATING TEXT BOX -->
+                <div class="static z-10 mt-4 max-w-md bg-white p-6 md:absolute md:left-[50%] md:top-1/2 md:mt-0 md:-translate-y-1/2 sm:p-8 lg:p-10"
+                    data-gsap="fade-right" data-duration="2">
+
+                    <p class="mb-6 font-sans text-base font-light leading-relaxed text-slate-gray sm:text-lg">
                         We offer a wide range of high-performance products tailored to your needs. You can seamlessly
                         combine different profile types within a single project to match your exact specifications.
                     </p>
 
-                    <!-- Button / Link Box -->
-                    <a href="page/specifications.html"
-                        class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-gold hover:text-dark transition-colors duration-300 group">
+                    <a href="page/specifications.php"
+                        class="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold transition-colors duration-300 hover:text-dark sm:text-sm">
                         <span>Explore Our Products</span>
+
                         <i
                             class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
                     </a>
@@ -395,42 +398,41 @@
     </section>
 
     <!-- About Us Section -->
-    <section class="py-24 sm:py-32 lg:py-40 relative overflow-hidden bg-white">
+    <section class="relative overflow-hidden bg-white py-24 sm:py-32 lg:py-40">
+        <!-- Background Image -->
+        <img src="public/image/section/bg-section.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"
+            class="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover object-center opacity-10" />
 
-        <!-- Background Image Element -->
-        <img src="public/image/section/bg-section.webp" alt="White geometric subtle background"
-            class="absolute inset-0 w-full h-full object-cover object-center z-0 opacity-10 pointer-events-none" />
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-
-                <!-- LEFT COLUMN: Label & Large Highlighted Title -->
+        <div class="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
+                <!-- LEFT COLUMN -->
                 <div class="lg:col-span-6 gsap-about-left" data-gsap="fade-left" data-duration="2">
-
-                    <div class="relative flex items-center justify-center w-full my-8">
+                    <div class="relative my-8 flex w-full items-center justify-center">
                         <div class="grow border-t border-slate-gray/30"></div>
-                        <span class="mx-4 shrink-0 text-sm font-bold tracking-widest text-gray-600 uppercase">
+                        <span class="mx-4 shrink-0 text-sm font-bold uppercase tracking-widest text-gray-600">
                             WHO WE ARE
                         </span>
                         <div class="grow border-t border-slate-gray/30"></div>
                     </div>
-
-                    <!-- Main Heading with Highlighted Keywords -->
                     <h2
-                        class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-dark leading-tight tracking-tight">
-                        Your total solution for high-quality <span class="text-gold">aluminum profiles</span> and
+                        class="font-heading text-3xl font-bold leading-tight tracking-tight text-dark sm:text-4xl lg:text-5xl">
+                        Your total solution for high-quality
+                        <span class="text-gold">aluminum profiles</span>
+                        and
                         <span class="text-gold">extrusions</span>
                     </h2>
                 </div>
 
-                <!-- RIGHT COLUMN: Narrative Description & Read More Link -->
-                <div data-gsap="fade-right" data-duration="2"
-                    class="lg:col-span-6 flex flex-col justify-between h-full pt-1 lg:pt-2 gsap-about-right">
-                    <div class="space-y-6 text-slate-gray text-base sm:text-lg leading-relaxed font-sans font-light">
+                <!-- RIGHT COLUMN -->
+                <div class="flex h-full flex-col justify-between pt-1 lg:col-span-6 lg:pt-2 gsap-about-right"
+                    data-gsap="fade-right" data-duration="2">
+                    <div class="space-y-6 font-sans text-base font-light leading-relaxed text-slate-gray sm:text-lg">
                         <p>
-                            <strong class="font-semibold text-dark">PT Rumi Metal Indonesia</strong> specializes in
-                            the production and supply of high-quality aluminum profiles tailored for demanding
-                            industrial and construction applications. We are committed to delivering
+                            <strong class="font-semibold text-dark">
+                                PT Rumi Metal Indonesia
+                            </strong>
+                            specializes in the production and supply of high-quality aluminum profiles tailored for
+                            demanding industrial and construction applications. We are committed to delivering
                             precision-engineered products that meet rigorous international standards.
                         </p>
                         <p>
@@ -439,11 +441,11 @@
                             trusted partner for structural and architectural projects across Indonesia and beyond.
                         </p>
                     </div>
-
                     <div class="pt-8">
-                        <a href="#about"
-                            class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-gold hover:text-dark transition-colors duration-300 group">
+                        <a href="page/about.php"
+                            class="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold transition-colors duration-300 hover:text-dark sm:text-sm">
                             <span>Read More</span>
+
                             <i
                                 class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
                         </a>
@@ -452,7 +454,6 @@
 
             </div>
         </div>
-
     </section>
 
     <!-- Section: Manufacturing Infrastructure -->
@@ -466,15 +467,18 @@
 
                 <div class="relative flex items-center justify-center w-full my-8 max-w-4xl mx-auto mb-16">
                     <div class="grow border-t border-slate-gray/30"></div>
+
                     <span class="mx-4 shrink-0 text-sm font-bold tracking-widest text-gray-600 uppercase">
                         Infrastructure
                     </span>
+
                     <div class="grow border-t border-slate-gray/30"></div>
                 </div>
 
                 <div
                     class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 border-b border-blue-gray pb-6">
-                    <!-- Main Heading (Kiri) -->
+
+                    <!-- Main Heading -->
                     <div class="max-w-xl">
                         <h2
                             class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-dark leading-tight tracking-tight">
@@ -482,16 +486,18 @@
                         </h2>
                     </div>
 
-                    <!-- Supporting Content (Kanan) -->
+                    <!-- Supporting Content -->
                     <div class="max-w-md lg:text-right">
                         <p class="text-base sm:text-lg text-slate-gray leading-relaxed font-sans font-light">
                             Extrusion equipment configured for different profile sizes
                             and production requirements.
                         </p>
                     </div>
+
                 </div>
 
             </div>
+
 
             <!-- Equipment Selector -->
             <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mb-10 gsap-infra-selector">
@@ -503,28 +509,33 @@
 
                     750 MT
 
-                    <span class="absolute left-0 bottom-0 h-0.5 bg-gold transition-all duration-300"
-                        :class="activeMachine === '750mt' ? 'w-full' : 'w-0 group-hover:w-full'">
+                    <span class="absolute left-0 bottom-0 h-0.5 bg-gold transition-all duration-300" :class="activeMachine === '750mt'
+                        ? 'w-full'
+                        : 'w-0 group-hover:w-full'">
                     </span>
 
                 </button>
+
 
                 <button @click="activeMachine = '1150mt'" :class="activeMachine === '1150mt'
                     ? 'text-dark'
                     : 'text-slate-gray hover:text-dark'"
                     class="group relative pb-2 text-xs sm:text-sm font-mono font-bold uppercase tracking-widest transition-colors duration-200 focus:outline-none">
+
                     1150 MT
-                    <span class="absolute left-0 bottom-0 h-0.5 bg-gold transition-all duration-300"
-                        :class="activeMachine === '1150mt' ? 'w-full' : 'w-0 group-hover:w-full'">
+
+                    <span class="absolute left-0 bottom-0 h-0.5 bg-gold transition-all duration-300" :class="activeMachine === '1150mt'
+                        ? 'w-full'
+                        : 'w-0 group-hover:w-full'">
                     </span>
 
                 </button>
 
             </div>
 
+
             <!-- 750 MT -->
-            <div x-show="activeMachine === '750mt'" x-cloak x-transition:enter="transition ease-out duration-300"
-                x-transition:enter-start="opacity-0 translate-y-3" x-transition:enter-end="opacity-100 translate-y-0"
+            <div x-show="activeMachine === '750mt'" x-cloak
                 class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch">
 
                 <!-- Machine Image -->
@@ -532,11 +543,12 @@
                     class="lg:col-span-7 relative min-h-90 sm:min-h-115 lg:min-h-140 overflow-hidden bg-black">
 
                     <img src="public/image/section/areapabrik1.webp" alt="750 MT Aluminum Extrusion Press at Rumi Metal"
+                        loading="lazy" decoding="async"
                         class="absolute inset-0 w-full h-full object-cover object-center">
 
-                    <div class="absolute inset-0 bg-linear-to-t from-black/45 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-linear-to-t from-black/45 via-transparent to-transparent">
+                    </div>
 
-                    <!-- Image Label -->
                     <div class="absolute left-6 bottom-6 sm:left-8 sm:bottom-8">
                         <div class="mt-2 text-2xl sm:text-3xl font-heading font-semibold text-white">
                             750 MT
@@ -544,6 +556,7 @@
                     </div>
 
                 </div>
+
 
                 <!-- Machine Information -->
                 <div data-gsap="fade-right" data-duration="2" class="lg:col-span-5 flex flex-col justify-center">
@@ -566,6 +579,7 @@
                             suitable for producing small to medium-sized aluminum profiles.
                         </p>
 
+
                         <!-- Key Specifications -->
                         <div class="mt-10 border-t border-blue-gray">
 
@@ -582,6 +596,7 @@
                                     </span>
                                 </div>
 
+
                                 <div class="py-5 border-b sm:border-b-0 border-blue-gray sm:px-5 sm:border-l">
                                     <span
                                         class="block text-xs font-mono font-bold uppercase tracking-widest text-slate-gray mb-2">
@@ -592,6 +607,7 @@
                                         Φ 100 mm
                                     </span>
                                 </div>
+
 
                                 <div class="py-5 sm:pl-5 sm:border-l border-blue-gray">
                                     <span
@@ -608,6 +624,7 @@
 
                         </div>
 
+
                         <!-- Application -->
                         <div class="mt-6 pt-5 border-t border-blue-gray">
 
@@ -622,10 +639,11 @@
 
                         </div>
 
+
                         <!-- CTA -->
                         <div class="mt-8">
 
-                            <a href="#manufacturing"
+                            <a href="page/facilities.php"
                                 class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-gold hover:text-dark transition-colors duration-300 group">
 
                                 <span>
@@ -633,7 +651,8 @@
                                 </span>
 
                                 <i
-                                    class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                                    class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1">
+                                </i>
 
                             </a>
 
@@ -645,9 +664,9 @@
 
             </div>
 
+
             <!-- 1150 MT -->
-            <div x-show="activeMachine === '1150mt'" x-cloak x-transition:enter="transition ease-out duration-300"
-                x-transition:enter-start="opacity-0 translate-y-3" x-transition:enter-end="opacity-100 translate-y-0"
+            <div x-show="activeMachine === '1150mt'" x-cloak
                 class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch">
 
                 <!-- Machine Image -->
@@ -655,12 +674,12 @@
                     class="lg:col-span-7 relative min-h-90 sm:min-h-115 lg:min-h-140 overflow-hidden bg-black">
 
                     <img src="public/image/section/areapabrik1.webp"
-                        alt="1150 MT Aluminum Extrusion Press at Rumi Metal"
+                        alt="1150 MT Aluminum Extrusion Press at Rumi Metal" loading="lazy" decoding="async"
                         class="absolute inset-0 w-full h-full object-cover object-center">
 
-                    <div class="absolute inset-0 bg-linear-to-t from-black/45 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-linear-to-t from-black/45 via-transparent to-transparent">
+                    </div>
 
-                    <!-- Image Label -->
                     <div class="absolute left-6 bottom-6 sm:left-8 sm:bottom-8">
                         <div class="mt-2 text-2xl sm:text-3xl font-heading font-semibold text-white">
                             1,150 MT
@@ -668,6 +687,7 @@
                     </div>
 
                 </div>
+
 
                 <!-- Machine Information -->
                 <div data-gsap="fade-right" data-duration="2" class="lg:col-span-5 flex flex-col justify-center">
@@ -690,6 +710,7 @@
                             designed for the production of medium to large-sized aluminum profiles.
                         </p>
 
+
                         <!-- Key Specifications -->
                         <div class="mt-10 border-t border-blue-gray">
 
@@ -706,6 +727,7 @@
                                     </span>
                                 </div>
 
+
                                 <div class="py-5 border-b sm:border-b-0 border-blue-gray sm:px-5 sm:border-l">
                                     <span
                                         class="block text-xs font-mono font-bold uppercase tracking-widest text-slate-gray mb-2">
@@ -716,6 +738,7 @@
                                         Φ 127 mm
                                     </span>
                                 </div>
+
 
                                 <div class="py-5 sm:pl-5 sm:border-l border-blue-gray">
                                     <span
@@ -732,6 +755,7 @@
 
                         </div>
 
+
                         <!-- Application -->
                         <div class="mt-6 pt-5 border-t border-blue-gray">
 
@@ -746,16 +770,23 @@
 
                         </div>
 
+
                         <!-- CTA -->
                         <div class="mt-8">
-                            <a href="#manufacturing"
+
+                            <a href="page/facilities.php"
                                 class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-gold hover:text-dark transition-colors duration-300 group">
+
                                 <span>
                                     View Manufacturing Infrastructure
                                 </span>
+
                                 <i
-                                    class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                                    class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1">
+                                </i>
+
                             </a>
+
                         </div>
 
                     </div>
@@ -765,13 +796,15 @@
             </div>
 
         </div>
+
     </section>
 
     <!-- Wave Marquee -->
     <div class="w-full overflow-hidden leading-none py-6 sm:py-8 bg-transparent">
-        <div class="flex w-[200%] animate-wave-marquee">
+        <div class="flex w-[200%] animate-wave-marquee will-change-transform" aria-hidden="true">
+
             <!-- SVG 1 -->
-            <svg class="w-1/2 h-16 sm:h-24 lg:h-28 shrink-0" viewBox="0 0 1200 200" fill="none"
+            <svg class="w-1/2 h-16 sm:h-24 lg:h-28 shrink-0 block" viewBox="0 0 1200 200" fill="none"
                 xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                 <path d="M0,100 C300,20 300,180 600,100 C900,20 900,180 1200,100" stroke="currentColor"
                     stroke-width="10" class="text-blue-gray opacity-40" />
@@ -779,14 +812,19 @@
                     stroke-width="10" class="text-blue-gray opacity-40" />
             </svg>
 
-            <!-- SVG 2 (Duplikat untuk looping seamless) -->
-            <svg class="w-1/2 h-16 sm:h-24 lg:h-28 shrink-0" viewBox="0 0 1200 200" fill="none"
+
+            <!-- SVG 2 -->
+            <svg class="w-1/2 h-16 sm:h-24 lg:h-28 shrink-0 block" viewBox="0 0 1200 200" fill="none"
                 xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+
                 <path d="M0,100 C300,20 300,180 600,100 C900,20 900,180 1200,100" stroke="currentColor"
                     stroke-width="10" class="text-blue-gray opacity-40" />
-                <path d="M0,140 C300,60 300,220 600,140 C900,60 900,220 1200,140" stroke="currentColor"
+
+                <path d="M0,140 C300,60 300,220 600,140 C900,60 900,180 1200,140" stroke="currentColor"
                     stroke-width="10" class="text-blue-gray opacity-40" />
+
             </svg>
+
         </div>
     </div>
 
@@ -794,40 +832,57 @@
     <section class="py-24 sm:py-32 bg-white text-gray-900">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <!-- Wrapper Utama Kontainer Gambar & Teks -->
             <div class="relative w-full">
 
-                <!-- Gambar Latar & Dark Overlay -->
+                <!-- Image + Overlay -->
                 <div data-gsap="fade-down" data-duration="2"
                     class="relative h-95 sm:h-115 lg:h-130 w-full bg-gray-900 overflow-hidden">
-                    <img src="public/image/section/section-employee.jpg" alt="Rumi Metal Engineers"
-                        class="w-full h-full object-cover object-center opacity-90">
-                    <div class="absolute inset-0 bg-black/30"></div>
 
-                    <!-- Judul Utama di Tengah Gambar (Overlay Text) -->
-                    <div
-                        class="absolute inset-0 flex flex-col items-center justify-center px-6 text-center z-10 -translate-y-6 sm:-translate-y-8">
-                        <h2 data-gsap="zoom-in" data-duration="2"
-                            class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white uppercase tracking-wider font-heading max-w-3xl leading-snug">
-                            RELIABLE ALUMINUM COMPONENTS FOR YOUR PROJECT
-                        </h2>
-                        <!-- Garis Horizontal Putih di Bawah Judul -->
-                        <div data-gsap="zoom-out" data-duration="2"
-                            class="w-16 h-0.5 bg-white mx-auto mt-4 origin-center"></div>
+                    <img src="public/image/section/section-employee.jpg" alt="Rumi Metal Engineers" loading="lazy"
+                        decoding="async" class="block w-full h-full object-cover object-center opacity-90">
+
+                    <div class="absolute inset-0 bg-black/30 pointer-events-none">
                     </div>
+
+
+                    <!-- Overlay Heading -->
+                    <div class="absolute inset-0 z-10 flex flex-col items-center justify-center px-6 text-center">
+
+                        <h2 data-gsap="zoom-in" data-duration="2"
+                            class="max-w-3xl text-2xl sm:text-3xl lg:text-4xl font-bold text-white uppercase tracking-wider font-heading leading-snug">
+
+                            RELIABLE ALUMINUM COMPONENTS FOR YOUR PROJECT
+
+                        </h2>
+
+
+                        <!-- Divider -->
+                        <div data-gsap="zoom-out" data-duration="2"
+                            class="w-16 h-0.5 bg-white mx-auto mt-4 origin-center">
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <!-- Card Putih Deskripsi (Kembali Menumpuk di Bawah Foto) -->
+
+                <!-- Description -->
                 <div class="relative z-20 max-w-4xl mx-auto -mt-16 sm:-mt-20 px-4 pb-4">
+
                     <div class="bg-white p-6 sm:p-8 lg:p-10 text-center">
+
                         <p
                             class="text-base sm:text-lg text-slate-gray leading-relaxed font-sans font-light text-justify sm:text-center">
+
                             Accurate fabrication and tight tolerances determine how well finished structures perform.
                             Our technical teams assist with project planning, engineering reviews, and quality checks at
                             every step of production. PT Rumi Metal Indonesia provides clear manufacturing
                             specifications and direct support to help our partners build reliable aluminum components.
+
                         </p>
+
                     </div>
+
                 </div>
 
             </div>
@@ -837,29 +892,29 @@
 
     <!-- Section: Pre-Footer Brand Statement -->
     <section
-        class="relative w-full min-h-112.5 sm:min-h-125 flex items-center justify-center bg-black overflow-hidden py-24">
+        class="relative flex min-h-112.5 sm:min-h-125 w-full items-center justify-center overflow-hidden bg-black py-24">
 
-        <!-- Background Image dengan Dark Overlay -->
-        <img src="public/image/section/section-corporate.png" alt="Rumi Metal"
-            class="absolute inset-0 w-full h-full object-cover object-center">
-        <div class="absolute inset-0 bg-black/40"></div>
+        <!-- Background Image -->
+        <img src="public/image/section/section-corporate.png" alt="Rumi Metal corporate environment" loading="lazy"
+            decoding="async" class="absolute inset-0 block h-full w-full object-cover object-center">
 
-        <!-- Content Container (Centered Text) -->
+        <!-- Dark Overlay -->
+        <div class="pointer-events-none absolute inset-0 bg-black/40">
+        </div>
+
+        <!-- Content -->
         <div data-gsap="fade-up" data-duration="3"
-            class="gsap-brand-content relative z-10 max-w-5xl mx-auto px-6 text-center text-white font-sans">
-
+            class="gsap-brand-content relative z-10 mx-auto max-w-5xl px-6 text-center font-sans text-white">
             <h2
-                class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-white leading-tight tracking-tight max-w-4xl mx-auto mb-10">
+                class="mx-auto mb-10 max-w-4xl text-3xl font-bold leading-tight tracking-tight text-white font-heading sm:text-4xl lg:text-5xl">
                 More than just aluminum profiles, we
                 forge the foundation of future industry.
             </h2>
 
-            <p
-                class="text-base sm:text-lg text-white/90 w-full whitespace-nowrap mx-auto font-sans font-light leading-relaxed">
+            <p class="mx-auto w-full text-base font-sans font-light leading-relaxed text-white/90 sm:text-lg">
                 Rumi Metal continues to improve quality, advance products, and respond to industrial demands in the new
                 era.
             </p>
-
         </div>
 
     </section>
@@ -869,24 +924,31 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-gsap="fade-up" data-duration="2"
-                class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 text-center sm:text-left">
+                class="flex flex-col items-center justify-center gap-6 text-center sm:flex-row sm:gap-10 sm:text-left">
 
-                <!-- Logo Sertifikasi -->
-                <div class="shrink-0 p-3 flex items-center justify-center">
-                    <img src="public/image/logo/logo-iso9001-2015.png" alt="ISO 9001:2015 Certified"
-                        class="h-16 sm:h-20 w-auto object-contain">
+                <!-- Certification Logo -->
+                <div class="flex shrink-0 items-center justify-center p-3">
+                    <img src="public/image/logo/logo-iso9001-2015.png" alt="ISO 9001:2015 Certified" loading="lazy"
+                        decoding="async" class="block h-16 w-auto object-contain sm:h-20">
                 </div>
 
-                <div class="hidden sm:block w-px h-16 bg-slate-200"></div>
 
+                <!-- Divider -->
+                <div class="hidden h-16 w-px bg-slate-200 sm:block"></div>
+
+
+                <!-- Certification Information -->
                 <div class="space-y-1">
-                    <h3 class="text-xl sm:text-2xl font-bold text-dark tracking-tight font-heading">
+
+                    <h3 class="text-xl font-bold tracking-tight text-dark font-heading sm:text-2xl">
                         ISO 9001:2015
                     </h3>
-                    <p class="text-base sm:text-lg text-slate-gray font-sans font-light max-w-xl">
+
+                    <p class="max-w-xl text-base font-sans font-light text-slate-gray sm:text-lg">
                         Our quality management system consistently adheres to international standards for precision
                         manufacturing.
                     </p>
+
                 </div>
 
             </div>
@@ -895,7 +957,7 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="bg-dark text-white py-16 border-t border-slate-gray/20 font-sans">
+    <footer x-cloak class="bg-dark text-white py-16 border-t border-slate-gray/20 font-sans">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <!-- Main Content Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pb-12">
@@ -903,7 +965,7 @@
                 <!-- Logo Section (Selalu di Paling Atas Kolom Kiri) -->
                 <div class="lg:col-span-6 space-y-6">
                     <!-- Logo Image -->
-                    <a href="index.html" class="inline-block">
+                    <a href="index.php" class="inline-block">
                         <img src="public/image/logo/logo-white.png" alt="Rumi Metal Indonesia Logo"
                             class="h-16 sm:h-28 w-auto object-contain">
                     </a>
