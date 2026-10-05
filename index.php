@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html lang="id" class="h-full scroll-smooth">
+<html lang="id" class="h-full">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rumi Metal | Precision Metal Stamping & Fabrication Solutions</title>
 
-    <!-- module -->
-    <script type="module" src="http://localhost:5173/@vite/client"></script>
-    <script type="module" src="http://localhost:5173/src/main.js"></script>
+    <meta name="title" content="PT Rumi Metal Indonesia | Precision Metal Stamping & Fabrication Solutions">
+    <meta name="description"
+        content="Manufacturer and supplier of industrial aluminum in Indonesia. Providing billets, flat bars, and custom extruded profiles. Contact us.">
 
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PT Rumi Metal Indonesia | Precision Metal Stamping & Fabrication Solutions">
+    <meta property="og:description"
+        content="Manufacturer and supplier of industrial aluminum in Indonesia. Providing billets, flat bars, and custom extruded profiles. Contact us.">
+    <meta property="og:image" content="public/image/logo/logo.png">
+
+    <!-- Boot awal: jalan sebelum first paint -->
+    <script>
+        (function () {
+            var d = document.documentElement;
+            d.classList.add('js');
+            // Cegah browser memulihkan scroll (memicu animasi & loncatan saat refresh)
+            if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+            // Failsafe: kalau main.js gagal dimuat, jangan biarkan halaman kosong
+            setTimeout(function () {
+                if (!d.classList.contains('ready')) d.classList.remove('js');
+            }, 6000);
+        })();
+    </script>
+
+    <!-- Critical CSS: wajib inline agar berlaku sebelum JS/Vite memasang CSS -->
     <style>
         [x-cloak] {
             display: none !important;
         }
 
+        /* Wave marquee */
         @keyframes waveMarquee {
             0% {
                 transform: translateX(0%);
@@ -28,7 +50,38 @@
         .animate-wave-marquee {
             animation: waveMarquee 12s linear infinite;
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animate-wave-marquee {
+                animation: none;
+            }
+        }
+
+        /* Sembunyikan body sampai CSS (Vite) + font + Alpine siap -> tidak ada FOUC */
+        .js:not(.ready) body {
+            opacity: 0;
+        }
+
+        /* Matikan transition selama boot agar header/logo tidak "animasi" ke state awal */
+        .js:not(.ready) *,
+        .js:not(.ready) *::before,
+        .js:not(.ready) *::after {
+            transition: none !important;
+        }
+
+        /* Elemen yang dianimasikan GSAP disembunyikan dari awal (bukan baru saat JS jalan) */
+        .js :is([data-gsap], .gsap-hero-label, .gsap-hero-subtitle, .hero-char) {
+            opacity: 0;
+            visibility: hidden;
+        }
     </style>
+
+    <link rel="preload" as="image" href="public/image/section/areapabrik1.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="public/image/logo/logo-white.png">
+
+    <!-- module -->
+    <script type="module" src="http://localhost:5173/@vite/client"></script>
+    <script type="module" src="http://localhost:5173/src/main.js"></script>
 </head>
 
 <body class="min-h-screen font-sans text-slate-gray antialiased bg-white selection:bg-dark/20"
@@ -38,8 +91,8 @@
     <?php include 'components/search.php' ?>
 
     <!-- Navbar -->
-    <header x-cloak @scroll.window="scrolled = (window.pageYOffset > 20)"
-        class="fixed top-0 left-0 z-50 w-full transition-all duration-300"
+    <header @scroll.window.passive="scrolled = (window.pageYOffset > 20)"
+        class="fixed top-0 left-0 z-50 w-full transition-all duration-300 bg-transparent text-white border-b border-transparent"
         :class="scrolled ? 'bg-white border-b border-slate-light text-dark shadow-sm' : 'bg-transparent text-white border-b border-transparent'">
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,9 +100,13 @@
 
                 <!-- Logo Image -->
                 <a href="index.php" class="flex items-center group">
-                    <div class="h-14 w-auto flex items-center justify-center transition transform scale-90 origin-left">
-                        <img :src="scrolled ? 'public/image/logo/logo.png' : 'public/image/logo/logo-white.png'"
-                            alt="Rumi Metal Logo" class="h-full w-auto object-contain transition-all duration-300" />
+                    <div class="relative h-14 w-auto flex items-center justify-center scale-90 origin-left">
+                        <img src="public/image/logo/logo-white.png" alt="Rumi Metal Logo" fetchpriority="high"
+                            decoding="async" class="h-full w-auto object-contain transition-opacity duration-300"
+                            :class="scrolled ? 'opacity-0' : 'opacity-100'" />
+                        <img src="public/image/logo/logo.png" alt="" aria-hidden="true" decoding="async"
+                            class="absolute inset-0 h-full w-full object-contain transition-opacity duration-300"
+                            :class="scrolled ? 'opacity-100' : 'opacity-0'" />
                     </div>
                 </a>
 
@@ -143,10 +200,17 @@
                     </button>
 
                     <!-- Mobile Hamburger Button -->
-                    <button type="button" @click="mobileMenuOpen = !mobileMenuOpen"
-                        class="p-2 rounded-xl focus:outline-none transition-colors"
+                    <button type="button" @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Toggle menu"
+                        :aria-expanded="mobileMenuOpen" class="p-2 rounded-xl focus:outline-none transition-colors"
                         :class="scrolled ? 'text-dark/80 hover:text-dark' : 'text-white/80 hover:text-white'">
-                        <i class="fa-solid" :class="mobileMenuOpen ? 'fa-xmark text-xl' : 'fa-bars text-xl'"></i>
+                        <svg x-show="!mobileMenuOpen" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg x-show="mobileMenuOpen" x-cloak class="h-5 w-5" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" />
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -227,7 +291,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark">
+    <section class="relative min-h-svh flex items-center justify-center overflow-hidden bg-dark">
 
         <!-- Background Image & Overlay -->
         <div class="absolute inset-0 z-0">
@@ -237,20 +301,8 @@
         </div>
 
         <!-- Hero Content -->
-        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center" x-data="{
-             text: 'Precision Aluminum Extrusions',
-             words: [],
-             init() {
-                 this.words = this.text.split(' ');
-             },
-             getCharIndex(wIndex, cIndex) {
-                 let count = 0;
-                 for (let i = 0; i < wIndex; i++) {
-                     count += this.words[i].length;
-                 }
-                 return count + cIndex;
-             }
-         }">
+        <?php $heroTitle = 'Precision Aluminum Extrusions'; ?>
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center">
 
             <!-- Company Label -->
             <div class="gsap-hero-label inline-flex items-center gap-2 px-4 py-1.5 mb-4">
@@ -259,25 +311,15 @@
                 </span>
             </div>
 
-            <!-- Main Heading (Character Entry Animation dengan Alpine.js tetap dipertahankan) -->
-            <h1
+            <!-- Main Heading: dipecah per huruf di server (PHP), dianimasikan GSAP.
+                 Teks sudah ada di HTML sejak awal -> tinggi h1 tetap, tidak ada layout shift -->
+            <h1 aria-label="<?= htmlspecialchars($heroTitle) ?>"
                 class="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white tracking-tight max-w-4xl mx-auto flex flex-wrap justify-center gap-x-2 sm:gap-x-4">
-                <template x-for="(word, wIndex) in words" :key="wIndex">
-                    <span class="inline-flex whitespace-nowrap overflow-hidden">
-                        <template x-for="(char, cIndex) in word.split('')" :key="cIndex">
-                            <span class="inline-block transition-all duration-700 ease-out transform"
-                                x-data="{ show: false, idx: 0 }" x-init="
-                                  idx = getCharIndex(wIndex, cIndex);
-                                  setTimeout(() => show = true, idx * 30 + 100);
-                              " :class="show 
-                                  ? 'translate-x-0 translate-y-0 opacity-100' 
-                                  : (idx % 2 === 0 
-                                      ? '-translate-y-6 -translate-x-2 opacity-0' 
-                                      : 'translate-y-6 translate-x-2 opacity-0')" x-text="char">
-                            </span>
-                        </template>
-                    </span>
-                </template>
+                <?php foreach (explode(' ', $heroTitle) as $word): ?>
+                    <span class="inline-flex whitespace-nowrap overflow-hidden"
+                        aria-hidden="true"><?php foreach (mb_str_split($word) as $char): ?><span
+                                class="hero-char inline-block"><?= htmlspecialchars($char) ?></span><?php endforeach; ?></span>
+                <?php endforeach; ?>
             </h1>
 
             <!-- Subtitle -->
@@ -506,9 +548,7 @@
                     ? 'text-dark'
                     : 'text-slate-gray hover:text-dark'"
                     class="group relative pb-2 text-xs sm:text-sm font-mono font-bold uppercase tracking-widest transition-colors duration-200 focus:outline-none">
-
                     750 MT
-
                     <span class="absolute left-0 bottom-0 h-0.5 bg-gold transition-all duration-300" :class="activeMachine === '750mt'
                         ? 'w-full'
                         : 'w-0 group-hover:w-full'">
@@ -535,7 +575,7 @@
 
 
             <!-- 750 MT -->
-            <div x-show="activeMachine === '750mt'" x-cloak
+            <div x-show="activeMachine === '750mt'"
                 class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch">
 
                 <!-- Machine Image -->
@@ -666,7 +706,7 @@
 
 
             <!-- 1150 MT -->
-            <div x-show="activeMachine === '1150mt'" x-cloak
+            <div x-show="activeMachine === '1150mt'" style="display: none;"
                 class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch">
 
                 <!-- Machine Image -->
@@ -820,7 +860,7 @@
                 <path d="M0,100 C300,20 300,180 600,100 C900,20 900,180 1200,100" stroke="currentColor"
                     stroke-width="10" class="text-blue-gray opacity-40" />
 
-                <path d="M0,140 C300,60 300,220 600,140 C900,60 900,180 1200,140" stroke="currentColor"
+                <path d="M0,140 C300,60 300,220 600,140 C900,60 900,220 1200,140" stroke="currentColor"
                     stroke-width="10" class="text-blue-gray opacity-40" />
 
             </svg>
@@ -957,7 +997,7 @@
     </section>
 
     <!-- Footer Section -->
-    <footer x-cloak class="bg-dark text-white py-16 border-t border-slate-gray/20 font-sans">
+    <footer class="bg-dark text-white py-16 border-t border-slate-gray/20 font-sans">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <!-- Main Content Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pb-12">
@@ -1047,37 +1087,6 @@
         </div>
     </footer>
 
-    <!-- GSAP HERO -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            gsap.registerPlugin(ScrollTrigger);
-
-            // Timeline Animasi Hero
-            const heroTl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: '#home',
-                    start: 'top 80%',
-                    toggleActions: 'play none none reverse'
-                }
-            });
-
-            // 1. Animasi Company Label (Zoom-in / Scale up)
-            heroTl.from('.gsap-hero-label', {
-                scale: 0.8,
-                opacity: 0,
-                duration: 0.6,
-                ease: 'back.out(1.7)'
-            })
-                // 2. Animasi Subtitle (Zoom-in-up / Slide up + Fade in)
-                .from('.gsap-hero-subtitle', {
-                    y: 30,
-                    scale: 0.95,
-                    opacity: 0,
-                    duration: 0.8,
-                    ease: 'power2.out'
-                }, '+=0.3'); // Delay 0.3s setelah label agar selaras dengan animasi teks Alpine
-        });
-    </script>
 </body>
 
 </html>

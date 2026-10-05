@@ -30,9 +30,15 @@
 }
 
 @layer base {
+    html {
+        background-color: #FFFFFF;
+        scrollbar-gutter: stable;
+    }
+
     body {
         font-family: "Outfit", sans-serif;
         color: #0E1117;
+        overflow-x: clip;
     }
 
     h1,
@@ -43,5 +49,11 @@
     h6 {
         font-family: "Space Grotesk", sans-serif;
         color: #0E1117;
+    }
+
+    i[class*="fa-"] {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
     }
 }
